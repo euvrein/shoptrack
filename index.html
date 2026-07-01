@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  </head>
+<body>
+
+<div class="app">
+  <div class="card">
+
+    <div class="header">
+      <h1><span style="color: #C13F3F;">Shop</span><span style="color: #1F6F5C;">Track</span></h1>
+      <p><small>by Lawrence</small></p>
+      
+    </div>
+
+    <div class="cash-section">
+      <label for="cashInput">Cash in hand</label>
+      <div class="cash-field">
+        <span class="currency">$</span>
+        <input id="cashInput" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00">
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Cash</div>
+        <div class="stat-value" id="cashOut">$0.00</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Spent</div>
+        <div class="stat-value" id="totalOut">$0.00</div>
+      </div>
+      <div class="stat remaining">
+        <div class="stat-label">Remaining</div>
+        <div class="stat-value" id="balanceOut">$0.00</div>
+      </div>
+    </div>
+
+    <div class="budget-bar-wrap">
+      <div class="budget-bar"><div class="budget-bar-fill" id="budgetFill"></div></div>
+      <div class="budget-bar-caption">
+        <span id="budgetPct">0% of cash used</span>
+        <span class="status" id="budgetStatus">On track</span>
+      </div>
+    </div>
+
+    <div class="add-section">
+      <div class="section-title">Add item</div>
+      <form class="add-item" id="addItemForm">
+        <input class="input full" id="descInput" type="text" placeholder="Item description" maxlength="60" required>
+        <input class="input mono" id="qtyInput" type="number" step="1" min="1" placeholder="ea" aria-label="Quantity" required>
+        <input class="input" style="grid-column: span 2; text-align: right;" id="amountInput" type="number" step="0.01" min="0" placeholder="$0.00" aria-label="Unit amount" required>
+        <button class="add-btn" type="submit">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add item
+        </button>
+      </form>
+    </div>
+
+    <div class="items-section">
+      <div class="items-header">
+        <div class="section-title">Items</div>
+        <div class="count" id="itemCount">0 items</div>
+      </div>
+      <ul class="items" id="itemsList"></ul>
+    </div>
+
+    <footer class="actions">
+      <button class="clear-btn" id="clearBtn" type="button">Clear all items</button>
+    </footer>
+
+  </div>
+</div>
+
+<script src="./js/main.js"></script>
+
+</body>
+</html>
