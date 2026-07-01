@@ -1,0 +1,11 @@
+# Ignore node_modules
+node_modules/
+android/
+
+
+!android/app/build/
+android/app/build/*
+
+capacitor.config.json
+package-lock.json
+package.json
